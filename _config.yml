@@ -1,10 +1,10 @@
 # Site settings
-title:       Pixyll
+title:       Rust Leipzig
 email:       your_email@example.com
 author:      John Otander
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "https://rust-leipzig.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services

@@ -1,8 +1,8 @@
 # Site settings
 title:       Rust Leipzig
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+email:       rust@saschagrunert.de
+author:      Sascha Grunert
+description: "Everything related to Rust, created by Rust Users from Leipzig."
 baseurl:     ""
 url:         "https://rust-leipzig.github.io"
 date_format: "%b %-d, %Y"
@@ -18,9 +18,9 @@ bing_verification:
 
 # Optional features
 animated:             false
-show_related_posts:   false
+show_related_posts:   true
 show_post_footers:    false
-show_social_icons:    false
+show_social_icons:    true
 ajaxify_contact_form: false
 enable_mathjax: false
 extended_fonts: false
@@ -42,10 +42,10 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: rust-leipzig
 bitbucket_username:
 stackoverflow_id:
-twitter_username:
+twitter_username: saschagrunert
 skype_username:
 steam_nickname:
 google_plus_id:
@@ -57,17 +57,17 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
+share_facebook: true
+share_twitter: true
 share_googleplus: false
 share_linkedin: false
 share_digg: false
 share_tumblr: false
-share_reddit: false
+share_reddit: true
 share_stumbleupon: false
-share_hackernews: false
+share_hackernews: true
 
 text:
   pagination:

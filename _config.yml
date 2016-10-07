@@ -1,7 +1,7 @@
 # Site settings
 title:       Rust Leipzig
-email:       rust@saschagrunert.de
-author:      Sascha Grunert
+email:
+author:      The Rust Leipzig Users
 description: "Everything related to Rust, created by Rust Users from Leipzig."
 baseurl:     ""
 url:         "https://rust-leipzig.github.io"

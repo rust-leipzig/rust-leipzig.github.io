@@ -12,6 +12,7 @@ Checkout the [Github repository](https://github.com/rust-leipzig/rust-leipzig.gi
 bug, or contribute.
 
 Current contributors:
+
 * [Sascha](https://github.com/saschagrunert)
 * [Nico](https://github.com/niko2342)
 * [Daniel](https://github.com/SchmidtD)

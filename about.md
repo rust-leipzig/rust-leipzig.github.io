@@ -14,7 +14,7 @@ bug, or contribute.
 Current contributors:
 
 * [Sascha](https://github.com/saschagrunert)
-* [Nico](https://github.com/niko2342)
+* [Niko](https://github.com/niko2342)
 * [Daniel](https://github.com/SchmidtD)
 * [Sebastian](https://github.com/Drogglbecher)
 * [Alexander](https://github.com/nextgenerationgeek)

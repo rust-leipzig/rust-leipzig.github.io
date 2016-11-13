@@ -16,6 +16,7 @@ One example could be to use the possibilities of Rust and Cargo to do prototypin
 we do that?
 
 For the first try we simply build a new cargo project:
+
 ```
 > cargo new --bin rapidc
      Created binary (application) `rapidc` project
@@ -67,11 +68,16 @@ extern "C" {
 }
 
 fn main() {
-    // Get the current args and map them to a vector of zero terminated c strings
-    let args: Vec<CString> = env::args().filter_map(|arg| CString::new(arg).ok()).collect();
+    // Get the current args and map them to a vector of zero
+    // terminated c strings:
+    let args: Vec<CString> = env::args().filter_map(|arg| {
+        CString::new(arg).ok()
+    }).collect();
 
     // Convert these c strings to raw pointers
-    let c_args: Vec<*const c_char> = args.iter().map(|arg| arg.as_ptr()).collect();
+    let c_args: Vec<*const c_char> = args.iter().map(|arg| {
+        arg.as_ptr()
+    }).collect();
 
     // Call the main function within the created c library
     unsafe {
@@ -93,7 +99,9 @@ and then link it to the Rust application? The build script looks like:
 extern crate gcc;
 
 fn main() {
-    gcc::Config::new().file("src/main.c").include("src").compile("libmain.a");
+    gcc::Config::new().file("src/main.c")
+                      .include("src")
+                      .compile("libmain.a");
 }
 ```
 
@@ -128,6 +136,7 @@ such a great build environment: Strong defaults will lead into a better world. C
 your library `libmain.a` for the file `main.c`.
 
 If we want to link another library to our C application we can simply use the `link` directive:
+
 ```rust
 #[link(name = "pthread")]
 extern "C" {

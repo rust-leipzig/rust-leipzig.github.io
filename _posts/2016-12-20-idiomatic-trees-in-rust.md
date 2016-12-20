@@ -42,7 +42,7 @@ struct Node<T> {
 }
 ```
 
-This is one one hand hard to understand and will on the other hand lead into runtime borrow checks, which are not that
+This is on one hand hard to understand and will on the other hand lead into runtime borrow checks, which are not that
 idiomatic Rust. Furthermore back references are simply not possible with this approach, since cyclic references are not
 allowed within Rust. The main reason is that cyclic references could lead very fast into memory leaks if we are not
 really careful. Also, this approach is not multi threading capable, but we could use an `Arc` instead of `Rc`, which will

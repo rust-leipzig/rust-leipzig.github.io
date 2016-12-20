@@ -2,7 +2,7 @@
 layout:     post
 title:      Idiomatic tree structures in Rust
 date:       2016-12-20
-summary:    A short introduction in mutable graph like structures
+summary:    A short introduction in how to build mutable graph like structures in Rust.
 categories: architecture
 ---
 

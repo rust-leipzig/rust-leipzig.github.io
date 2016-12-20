@@ -60,6 +60,7 @@ pub struct Arena<T> {
 ```
 
 A node could then look like this:
+
 ```rust
 pub struct Node<T> {
     parent: Option<NodeId>,

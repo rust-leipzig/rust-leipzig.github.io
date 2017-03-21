@@ -35,6 +35,7 @@ layout: default
 {% endif %}
 
 {% if site.disqus_shortname %}
+  <h3 class="related-post-title">{{ site.text.post.comments }}</h3>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = '{{ site.disqus_shortname }}';

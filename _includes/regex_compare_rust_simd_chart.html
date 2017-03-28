@@ -1,0 +1,76 @@
+<div><canvas id="rust_simd_chart" height="600"></canvas></div>
+<script>
+    var ctx = document.getElementById("rust_simd_chart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Twain", "(?i)Twain", "[a-z]shing", "Huck[a-zA-Z]+|Saw[a-zA-Z]+",
+                "\b\w+nn\b", "[a-q][^u-z]{13}x", "Tom|Sawyer|Huckleberry|Finn", "(?i)Tom|Sawyer|Huckleberry|Finn",
+                ".{0,2}(Tom|Sawyer|Huckleberry|Finn)",".{2,4}(Tom|Sawyer|Huckleberry|Finn)",
+                "Tom.{10,25}river|river.{10,25}Tom", "[a-zA-Z]+ing", "\s[a-zA-Z]{0,12}ing\s",
+                "([A-Za-z]awyer|[A-Za-z]inn)\s", "[\"'][^\"']{0,30}[?!\.][\"']", "∞|✓", "\p{Sm}"
+            ],
+            datasets: [
+                {
+                    type: 'bar',
+                    label: 'stable',
+                    yAxisID: 'timing',
+                    data: [2.2, 41.9, 7, 5.5, 193.7, 3077.9, 39.9, 40.2, 34.2, 34.4, 28.6, 15.8, 40.5, 34.2, 12.5, 39.1, 33.9],
+                    backgroundColor: 'rgba(64, 64, 64, 0.2)',
+                    borderColor: 'rgba(64, 64, 64, 1)',
+                    borderWidth: 1
+                },
+                {
+                    type: 'bar',
+                    label: 'nightly',
+                    yAxisID: 'timing',
+                    data: [2, 3.7, 5.9, 3.9, 179.9, 3120.6, 4.3, 40.3, 35.2, 34.7, 5.2, 16.8, 41.8, 34.4, 11.6, 3.6, 34.8],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    type: 'line',
+                    label: 'nightly/stable',
+                    yAxisID: 'ratio',
+                    data: [90.91, 8.83, 84.29, 70.91, 92.88, 101.39, 10.78, 100.25, 102.92, 100.87, 18.18, 106.33, 103.21, 100.58, 92.80, 9.21, 102.65],
+                    borderColor: 'rgba(255,99,132,1)',
+                    backgroundColor: 'white',
+                    borderWidth: 2,
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [
+                    {
+                        id: 'timing',
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'ms'
+                        },
+                        type: 'logarithmic',
+                        position: 'left',
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }, {
+                        id: 'ratio',
+                        scaleLabel: {
+                            display: true,
+                            labelString: '%'
+                        },
+                        type: 'linear',
+                        position: 'right',
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }
+                ]
+            }
+        }
+    });
+</script>

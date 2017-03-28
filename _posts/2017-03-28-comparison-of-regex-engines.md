@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      A comparison of regex engines
 date:       2017-03-28

@@ -17,7 +17,7 @@ I want to give an overview of actively developed engines regarding their perform
 
 # Test setup
 ## Hardware
-The performance is measured on my Dell notebook only. It's not the newest one, but it doesn't matter because
+The performance is measured only on my Dell notebook. It's not the newest one, but it doesn't matter because
 I used the same hardware for all engines and I'm interested in the performance results compared to each other.
 But here are some hardware information:
 - Chassis: Dell Latitude E7450
@@ -26,11 +26,11 @@ But here are some hardware information:
 - SSD: Samsung PM85 256GB
 
 ## Software
-The used software is also not the newest, but newer than the default packages of my installed Ubuntu 16.04:
+The used software is also not the latest, but newer than the default packages of my installed Ubuntu 16.04:
 - GCC 6.2.0
 - Rustc 1.16.0 and 1.17.0-nightly
 
-I want to get the execution time of each engine for the following regular expression:
+I want to get the execution time to find a match of each engine for the following regular expression:
 - `Twain`
 - `(?i)Twain`
 - `[a-z]shing`
@@ -147,7 +147,7 @@ Total Results:
 ```
 
 ## Timings
-On the basis of a CSV-file I did some analytics. At first I summarized the overall execution time per engine.
+On the basis of a CSV-file I do some analytics. At first I summarize the overall execution time per engine.
 The following chart shows the details:
 
 {% include regex_compare_timing_chart.html %}
@@ -155,8 +155,8 @@ The following chart shows the details:
 Hyperscan is the fastest engine with a total execution time of ~300ms (~3x less time than 2nd) and the Rust regex crate
 gets the 5th place with ~3700ms. It seems that the Rust regex crate is not the fastest solution in place.
 
-But: what happens if one expression is really slow? This test will distort the overall result of the engine.
-Therefor I implemented a simple result scoring. For each test the fastest engine can earn 5 points, the 2nd 4 points
+But: what happens if one expression is really slow? This test distorts the overall result of the engine.
+Therefor I implement a simple result scoring. For each test the fastest engine can earn 5 points, the 2nd 4 points
 and so on. This limits the impact of a single slow expression. The following chart shows the score points per engine:
 
 {% include regex_compare_score_chart.html %}
@@ -184,7 +184,7 @@ to get feedback regarding my findings. Andrew Gallant alias [BurntSushi](https:/
 gave me great feedback with some improvement proposals.
 
 One improvement is to use the SIMD feature of the regex crate. This feature is currently available in the Rust nightly
-built, so I had to install the nightly toolchain too. I adjusted the projects cmake scripts to detect whether a nightly
+built, so I have to install the nightly toolchain too. I adjust the projects cmake scripts to detect whether a nightly
 compiler is used and the SIMD feature is supported. So the rust toolchain can be switched with
 `rustup default nightly-x86_64-unknown-linux-gnu` and the tool has to be reconfigured and build again to get
 the new results.
@@ -197,7 +197,7 @@ The Rust regex crates uses a finite state machine based algorithm, which lacks f
 
 ## Matches
 Regarding the found matches I found some deviations. At first, the libraries oniguruma and tre do not support
-Unicode categories expressions like `\p{Sm}`. This expression matches all mathematical symbols like `=` or `|`.
+Unicode category expressions like `\p{Sm}`. This expression matches all mathematical symbols like `=` or `|`.
 The Rust regex crate matches additionally the symbol `∞`.
 
 Hyperscan returns more matches than other engines, e.g. 977 for the expression `Huck[a-zA-Z]+|Saw[a-zA-Z]+` whereas

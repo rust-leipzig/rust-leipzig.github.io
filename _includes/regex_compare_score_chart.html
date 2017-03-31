@@ -1,0 +1,51 @@
+<div><canvas id="score_chart" height="400"></canvas></div>
+<script>
+    var ctx = document.getElementById("score_chart");
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["tre", "pcre-dfa", "onig", "pcre", "re2", "rust_regex", "pcre-jit", "hscan"],
+            datasets: [{
+                label: 'Score',
+                data: [0, 0, 4, 8, 26, 47, 47, 72],
+                backgroundColor: [
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'points'
+                    }
+                }]
+            }
+        }
+    });
+</script>

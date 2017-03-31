@@ -16,3 +16,4 @@ Our [presentations](https://rust-leipzig.github.io/presentations) will reflect o
 Current contributors:
 
 * [Sascha Grunert](https://github.com/saschagrunert)
+* [Daniel Schmidt](https://github.com/SchmidtD)

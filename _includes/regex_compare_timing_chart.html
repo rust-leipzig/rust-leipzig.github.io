@@ -1,0 +1,51 @@
+<div><canvas id="timing_chart" height="400"></canvas></div>
+<script>
+    var ctx = document.getElementById("timing_chart");
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["pcre-dfa", "pcre", "tre", "rust_regex", "onig", "pcre-jit", "re2", "hscan"],
+            datasets: [{
+                label: 'Timing',
+                data: [14135.1, 12626.6, 10508.5, 3681.5, 2475.9, 1050.6, 946.0, 299.5],
+                backgroundColor: [
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)',
+                    'rgba(64, 64, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)',
+                    'rgba(64, 64, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'ms'
+                    }
+                }]
+            }
+        }
+    });
+</script>
